@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Libri presenti in biblioteca</title>
+</head>
+<body style="background-color: #E0FFBF;">
+
+	<span>
+
+		<h2 style="text-align:center; color: red;" , th:if="${#lists.isEmpty(myList)}">Non ci sono ancora libri inseriti!</h2>
+
+	</span>
+
+	<span th:unless="${#lists.isEmpty(myList)}">
+
+		<h1 style="text-align:center"><u>Elenco dei libri presenti in biblioteca:</u></h1>
+
+	</span>
+
+	<hr>
+	<br>
+
+	<table border="2" style="width:75%" align="center">
+
+		<tr style="padding: 20px; background-color: #00E100">
+			<th>Titolo</th>
+			<th>Autore</th>
+			<th>Anno Pubblicazione</th>
+			<th>Link acquisto</th>
+		</tr>
+
+		<tr th:each="libro : ${myList}" style="padding: 20px">
+			<td th:text="${libro.titolo}" style="text-align:center"></td>
+			<td th:text="${libro.autore}" style="text-align:center"></td>
+			<td th:text="${libro.annoPB}" style="text-align:center"></td>
+			<td th:text="${libro.link}" style="text-align:center"></td>
+		</tr>
+
+	</table>
+
+	<br>
+	<hr>
+	<br>
+
+	<a href="/addNewBook"><h3 style="text-align:center">Registra un nuovo libro!</h3></a>
+
+	<br>
+	<hr>
+
+	<a href="/"><h4 style="text-align:center">Torna alla Home Page</h4></a>
+
+</body>
+</html>

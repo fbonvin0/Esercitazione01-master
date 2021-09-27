@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Esito Ricerca</title>
+</head>
+<body style="background-color: #E0FFBF;">
+
+    <span>
+
+        <h2 style="text-align:center; color: red;" , th:if="${#lists.isEmpty(myList)}">La ricerca non ha prodotto risultati.</h2>
+
+	</span>
+
+
+    <span th:unless="${#lists.isEmpty(myList)}">
+
+        <h1 style="text-align:center"><u>Risultato della ricerca:</u></h1>
+
+    </span>
+
+    <hr>
+    <br>
+
+    <table border="2" style="width:75%" align="center">
+        <tr style="padding: 20px; background-color: #00E100">
+            <th>Titolo</th>
+            <th>Autore</th>
+            <th>Anno Pubblicazione</th>
+            <th>Link acquisto</th>
+        </tr>
+
+        <tr th:each="libro : ${myList}" style="padding: 20px">
+            <td th:text="${libro.titolo}" style="text-align:center"></td>
+            <td th:text="${libro.autore}" style="text-align:center"></td>
+            <td th:text="${libro.annoPB}" style="text-align:center"></td>
+            <td th:text="${libro.link}" style="text-align:center"></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <hr style="width: 50%;" align="center">
+
+    <h3 style="text-align:center"><a href="/search">Clicca qui per effettuare una nuova ricerca</a></h3>
+
+    <hr style="width: 50%;" align="center">
+
+    <a href="/"><h4 style="text-align:center;">Torna alla Home Page</h4></a>
+
+</body>
+</html>

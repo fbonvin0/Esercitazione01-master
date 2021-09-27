@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Ricerca Titolo</title>
+</head>
+<body style="background-color: #E0FFBF;">
+
+    <div align="center", style="border: 2px solid black; width:30%; margin-left: 35%; margin-right: 35%; margin-top: 5%;">
+
+        <h1 style="background-color: #00E100; text-align:center"><u>Form di ricerca</u></h1>
+
+    <form action="#" th:action="@{/search}" th:object="${formricerca}" method="post">
+
+        <label style="font-size:140%; margin-left: 2%">Titolo del libro:</label><br>
+        <input style="margin-left: 2%;", type="text" th:field="*{titolo}" /><br><br>
+
+        <p><input type="submit" value="Ricerca" /> <input type="reset" value="Reset" /> </p>
+
+    </form>
+
+    </div>
+
+    <br>
+
+    <hr style="width: 30%;" align="center">
+
+    <a href="/"><h4 style="text-align:center">Torna alla Home Page</h4></a>
+
+</body>
+</html>

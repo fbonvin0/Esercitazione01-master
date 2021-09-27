@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="it">
+<head>
+<meta charset="ISO-8859-1">
+<title>Form Libro</title>
+</head>
+<body style="background-color: #E0FFBF;">
+
+	<div align="center", style="border: 2px solid black; width:30%; margin-left: 35%; margin-right: 35%; margin-top: 5%;">
+
+	<h1 style="background-color: #00E100; text-align:center"><u>Form Inserimento Libro</u></h1>
+
+	<form action="#" th:action="@{/addNewBook}" th:object="${formbook}" method="post">
+
+		<label style="font-size:140%; margin-left: 2%">Titolo:</label><br>
+		<input style="margin-left: 2%;", type="text" th:field="*{titolo}" /><br><br>
+		<label style="font-size:140%; margin-left: 2%">Autore:</label><br>
+   		<input style="margin-left: 2%;", type="text" th:field="*{autore}" /><br><br>
+		<label style="font-size:140%; margin-left: 2%">Anno di Pubblicazione:</label><br>
+   		<input style="margin-left: 2%;", type="text" th:field="*{annoPB}" /><br><br>
+		<label style="font-size:140%; margin-left: 2%">Link per acquistarlo:</label><br>
+   		<input style="margin-left: 2%;", type="text" th:field="*{link}" /><br><br>
+
+		<p><input style="margin-left: 2%;", type="submit" value="Registra libro" /> <input type="reset" value="Reset" /> </p>
+
+	</form>
+
+	</div>
+
+	<br>
+
+	<hr style="width: 30%;" align="center">
+
+	<a href="/"><h4 style="text-align:center;">Torna alla Home Page</h4></a>
+
+</body>
+</html>
